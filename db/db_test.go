@@ -34,6 +34,8 @@ func TestGetTransaction(t *testing.T) {
 
 	tr.Name = "Transaction Name"
 	tr.Timestamp = time.Now()
+	tr.Amount = 1.50
+	tr.Owner = "simon"
 
 	createdTransaction := database.CreateTransaction(&tr)
 
