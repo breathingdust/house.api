@@ -11,7 +11,8 @@ type (
 		Id        bson.ObjectId `json:"id" bson:"_id"`
 		Name      string        `json:"name" bson:"name"`
 		Amount    float64       `json:"Amount" bson:"amount"`
-		Owner     string        `json:"Owner" bson:"owner"`
+		Buyer     string        `json:"Buyer" bson:"buyer"`
+		Type      string        `json:"Type" bson:"type"`
 		Timestamp time.Time     `json:"Timestamp" bson:"timestamp"`
 	}
 )

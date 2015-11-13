@@ -3,7 +3,7 @@ package db
 import (
 	"log"
 
-	"github.com/breathingdust/houseapp/models"
+	"github.com/breathingdust/house.api/models"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
 )

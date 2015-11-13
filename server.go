@@ -5,9 +5,10 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/breathingdust/houseapp/controllers"
-	"github.com/breathingdust/houseapp/db"
+	"github.com/breathingdust/house.api/controllers"
+	"github.com/breathingdust/house.api/db"
 	"github.com/gorilla/mux"
+	"github.com/rs/cors"
 )
 
 func main() {
@@ -31,6 +32,12 @@ func main() {
 	r.HandleFunc("/transactions/{id}", tc.GetTransactionHandler).Methods("GET")
 	r.HandleFunc("/transactions", tc.PostTransactionHandler).Methods("POST")
 	http.Handle("/", r)
+	log.Println("Listening on port 8080")
 
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	c := cors.New(cors.Options{
+		AllowedOrigins: []string{"*"},
+	})
+
+	handler := c.Handler(r)
+	log.Fatal(http.ListenAndServe(":8080", handler))
 }

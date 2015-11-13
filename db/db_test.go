@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/breathingdust/houseapp/models"
+	"github.com/breathingdust/house.api/models"
 	"github.com/stretchr/testify/assert"
 	"gopkg.in/mgo.v2"
 )
@@ -35,7 +35,8 @@ func TestGetTransaction(t *testing.T) {
 	tr.Name = "Transaction Name"
 	tr.Timestamp = time.Now()
 	tr.Amount = 1.50
-	tr.Owner = "simon"
+	tr.Buyer = "simon"
+	tr.Type = "shared"
 
 	createdTransaction := database.CreateTransaction(&tr)
 
@@ -53,6 +54,9 @@ func TestGetTransactions(t *testing.T) {
 
 	tr.Name = "Transaction Name"
 	tr.Timestamp = time.Now()
+	tr.Amount = 1.50
+	tr.Buyer = "simon"
+	tr.Type = "shared"
 
 	database.CreateTransaction(&tr)
 

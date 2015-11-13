@@ -1,0 +1,8 @@
+{
+  "id": "6B3JH7HB3N",
+  "name": "A transaction name",
+  "amount": 3.45,
+  "purchaser": "simon" | "anika",
+  "paymentType": "personal" | "shared",
+  "timestramp": ""
+}

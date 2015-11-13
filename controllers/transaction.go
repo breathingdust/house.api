@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/breathingdust/houseapp/db"
-	"github.com/breathingdust/houseapp/models"
+	"github.com/breathingdust/house.api/db"
+	"github.com/breathingdust/house.api/models"
 	"github.com/gorilla/mux"
 )
 
